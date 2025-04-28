@@ -1,0 +1,25 @@
+Epoch 1 | Train Loss: 0.2770 | Val Loss: 0.0928
+Epoch 11 | Train Loss: 0.0966 | Val Loss: 0.1881
+
+Residual Statistics:
+SARIMA - Mean: -0.0039, Std: 1.6781
+Hybrid - Mean: 0.1169, Std: 1.6351
+
+================================================================================
+Model Performance Metrics
+================================================================================
+Metric     | SARIMA          | HYBRID
+--------------------------------------------------------------------------------
+MSE        | 2.811           | 2.6826
+RMSE       | 1.6766          | 1.6379
+MAE        | 1.3617          | 1.3428
+MAPE       | 44.8902         | 43.0777
+R²         | 0.1472          | 0.1862
+================================================================================
+
+Improvement of Hybrid over SARIMA:
+MSE: 4.57% reduction
+RMSE: 2.31% reduction
+MAE: 1.39% reduction
+MAPE: 4.04% reduction
+R²: +0.0390 absolute
