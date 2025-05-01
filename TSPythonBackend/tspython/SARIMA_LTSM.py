@@ -157,15 +157,14 @@ def generate_forecast(mood_df, temp_df=None, forecast_days=FUTURE_HORIZON):
     mood_series = mood_df.iloc[:, 0]
 
     try:
-        sarima = fit_sarima_model(temp_df)
+        sarima = fit_sarima_model(mood_series)
         in_sample_pred = sarima.predict_in_sample()
         residuals = mood_series - in_sample_pred
     except Exception as e:
         print(f"SARIMA failed: {e}")
         return naive_forecast(mood_series, forecast_days)
-
-    external = None
-
+ 
+     external = {'temp': temp_df.iloc[:, 0]} if temp_df is not None else None
     try:
         X, y, scaler = prepare_features(residuals, external)
     except Exception as e:
